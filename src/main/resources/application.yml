@@ -1,0 +1,31 @@
+spring:
+  thymeleaf:
+    cache: false
+  datasource:
+    url: jdbc:mysql://106.12.145.135:3306/mydemo?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: jack
+    password: jack@2019
+
+#  redis:
+#    # Redis数据库索引（默认为0）
+#    database: 0
+#    host: 192.168.211.131
+#    port: 6379
+#    timeout: 20s
+#    lettuce:
+#      pool:
+#        # 连接池最大连接数（使用负值表示没有限制） 默认 8
+#        max-active: 8
+#        # 连接池最大阻塞等待时间（使用负值表示没有限制） 默认 -1
+#        max-wait: -1ms
+#        # 连接池中的最大空闲连接 默认 8
+#        max-idle: 8
+#        # 连接池中的最小空闲连接 默认 0
+#        min-idle: 0
+server:
+  port: 8166
+  servlet:
+    context-path: /blog
+mybatis:
+  config-location: classpath:com/jackinjava/blog/mybatis-config.xml
+  mapper-locations: classpath:com/jackinjava/blog/mapper/*.xml

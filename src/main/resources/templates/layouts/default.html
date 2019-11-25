@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <!-- 引入样式 -->
+    <link rel="stylesheet" th:href="@{'/element-ui/index.css'}">
+    <script type="text/javascript" th:src="@{'/commons/lodash.min.js'}"></script>
+    <script type="text/javascript" th:src="@{'/commons/axios.min.js'}"></script>
+    <!-- vue.js一定要在element-ui前引入 -->
+    <script type="text/javascript" th:src="@{'/commons/vue.js'}"></script>
+    <script type="text/javascript" th:src="@{'/element-ui/index.js'}"></script>
+
+</head>
+<body>
+<div id="app" layout:fragment="content" v-cloak>
+</div>
+<div layout:fragment="footer">
+</div>
+</body>
+</html>
