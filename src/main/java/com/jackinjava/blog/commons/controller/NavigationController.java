@@ -1,4 +1,4 @@
-package com.jackinjava.blog.commons;
+package com.jackinjava.blog.commons.controller;
 
 import org.springframework.util.AntPathMatcher;
 import org.springframework.web.bind.annotation.GetMapping;

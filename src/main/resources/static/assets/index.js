@@ -10,7 +10,8 @@ new Vue({
   },
   methods: {
     handleSelect: function(key, keyPath) {
-      console.log(key, keyPath);
+      base.message.success("这是错误提示")
+
     }
   }
 })
