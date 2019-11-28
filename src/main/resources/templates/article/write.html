@@ -8,8 +8,25 @@
 </head>
 <body>
 <div layout:fragment="content">
-  <div id="editor" ref="editor" style="text-align:left"></div>
-  <el-button @click="getContent">获取内容</el-button>
+  <div class="article-content" :style="contentStyle">
+    <div class="article-menu">
+      <el-page-header @back="goBack"></el-page-header>
+
+    </div>
+    <div class="article-list">
+
+    </div>
+    <div class="article-editor" :style="editorStyle">
+      <div class="editor-toolbar">
+        <div class="toolbar" ref="toolbar"></div>
+        <div class="toolbar-button">
+          <el-button type="primary" size="mini" round @click="save">保存</el-button>
+          <el-button type="warning" size="mini" round>发布文章</el-button>
+        </div>
+      </div>
+      <div class="editor" ref="editor" style="text-align:left" :style="editor"></div>
+    </div>
+  </div>
 </div>
 <div layout:fragment="footer">
   <script type="text/javascript" th:src="@{'/assets/article/write.js'}"></script>

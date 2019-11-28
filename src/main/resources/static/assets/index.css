@@ -1,3 +1,20 @@
 .main-app {
 
 }
+
+body {
+    margin: 0;
+}
+
+.el-menu.el-menu--horizontal {
+    margin: 0 8px;
+}
+
+.main-app ul.el-menu-demo.el-menu--horizontal.el-menu {
+    position: fixed;
+    width: 100%;
+}
+
+iframe {
+    margin-top: 61px;
+}

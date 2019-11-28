@@ -6,13 +6,13 @@
   <title>首页</title>
 </head>
 <body>
-<div layout:fragment="content" class="main-app" :style="appStyle">
+<div layout:fragment="content" class="main-app" >
   <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
     <el-menu-item index="1">我的主页</el-menu-item>
     <el-menu-item index="2">牛批工具</el-menu-item>
     <el-menu-item index="3">沙皮文章</el-menu-item>
   </el-menu>
-  <iframe frameborder="0" :height="iframeHeight" width="100%" :src="activeSrc"></iframe>
+  <iframe id="menu-iframe" frameborder="0" scrolling="yes" :height="iframeHeight" width="100%" :src="activeSrc"></iframe>
 </div>
 <div layout:fragment="footer">
   <link th:href="@{'/assets/index.css'}" rel="stylesheet">
