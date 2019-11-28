@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorate="~{layouts/default}">
+<head>
+  <title>写文章</title>
+  <link th:href="@{'/assets/article/write.css'}" rel="stylesheet">
+</head>
+<body>
+<div layout:fragment="content">
+  <div id="editor" ref="editor" style="text-align:left"></div>
+  <el-button @click="getContent">获取内容</el-button>
+</div>
+<div layout:fragment="footer">
+  <script type="text/javascript" th:src="@{'/assets/article/write.js'}"></script>
+</div>
+</body>
+</html>

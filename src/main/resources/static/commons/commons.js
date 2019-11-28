@@ -35,8 +35,7 @@ var base = {
       ELEMENT.$message(options);
     }
   },
-  notify: {},
-
+  notify: {}
 };
 
 base.http = {
@@ -119,8 +118,26 @@ var tryCloseLoading = function tryCloseLoading() {
   }
 };
 
+base.mainHeight = {
+  data: function data() {
+    return {
+      mainHeight: 0
+    }
+  },
+  mounted: function mounted() {
+    this.getMainHeight();
+  },
+  methods: {
+    getMainHeight: function getMainHeight() {
+      var content = document.querySelector('.main-app');
+      this.mainHeight = content.clientHeight - 61;
+    }
+  }
+};
+
+
 Vue.mixin({
-  method: {
+  methods: {
     $get: function $get(url, params, config) {
       return base.http.get(url, params, config);
     },

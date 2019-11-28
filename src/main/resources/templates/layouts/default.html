@@ -11,7 +11,12 @@
     <script type="text/javascript" th:src="@{'/commons/vue.js'}"></script>
     <script type="text/javascript" th:src="@{'/element-ui/index.js'}"></script>
     <script type="text/javascript" th:src="@{'/commons/commons.js'}"></script>
-
+<!--    <script type="text/javascript" th:src="@{'/commons/xss.min.js'}"></script>-->
+    <script type="text/javascript" th:src="@{'/commons/wangEditor.min.js'}"></script>
+    <script type="text/javascript" th:inline="javascript">
+        var ctxPath = /*[[@{/}]]*/ '';
+        ctxPath = _.endsWith(ctxPath, '/') ? ctxPath.substring(0, ctxPath.length - 1) : ctxPath;
+    </script>
 </head>
 <body>
 <div id="app" layout:fragment="content" v-cloak>

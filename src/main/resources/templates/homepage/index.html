@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorate="~{layouts/default}">
+<head>
+  <title>我的主页</title>
+  <link th:href="@{'/assets/homepage/index.css'}" rel="stylesheet">
+</head>
+<body>
+<div layout:fragment="content">
+  <span style="font-size: 18px;color: red;">这是我的主页</span>
+
+</div>
+<div layout:fragment="footer">
+  <script type="text/javascript" th:src="@{'/assets/homepage/index.js'}"></script>
+</div>
+</body>
+</html>

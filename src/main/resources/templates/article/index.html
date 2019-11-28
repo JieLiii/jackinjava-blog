@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorate="~{layouts/default}">
+<head>
+  <title>我的文章</title>
+  <link th:href="@{'/assets/article/index.css'}" rel="stylesheet">
+</head>
+<body>
+<div layout:fragment="content">
+  <span style="font-size: 18px;color: red;">这是我的文章</span>
+  <el-button type="primary" @click="newPage">点击跳转</el-button>
+  <el-button type="primary" @click="write">写文章</el-button>
+</div>
+<div layout:fragment="footer">
+  <script type="text/javascript" th:src="@{'/assets/article/index.js'}"></script>
+</div>
+</body>
+</html>
