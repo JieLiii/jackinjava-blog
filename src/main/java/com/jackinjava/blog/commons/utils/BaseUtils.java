@@ -6,7 +6,7 @@ import java.util.UUID;
  * @author LiJie on 2019/11/27
  */
 public interface BaseUtils {
-    default String getUUID(){
+    static String getUUID(){
         return UUID.randomUUID().toString().replaceAll("-", "");
     }
 }

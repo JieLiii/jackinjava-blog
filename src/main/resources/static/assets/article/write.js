@@ -52,13 +52,22 @@ new Vue({
       },
       editor: {
         height: '0'
-      }
+      },
+      saveUrl: ctxPath + '/article/save'
     }
   },
   methods: {
     save: function () {
-      alert(this.E.txt.text());
-      alert(this.E.txt.html());
+
+      var me = this;
+      var body = {
+        content: me.E.txt.text(),
+        contentHtml: me.E.txt.html()
+      };
+      me.$post(me.saveUrl,body).then(function () {
+        base.message.success("保存成功");
+      })
+
     },
     handleOpen: function(key, keyPath) {
       console.log(key, keyPath);

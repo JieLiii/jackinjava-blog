@@ -7,11 +7,11 @@ var axiosInst = axios.create({
 
 var base = {
   loading: function loading(config) {
-    return ELEMENT.$loading.service(_.assign({}, {
+    return ELEMENT.$loading(_.assign({}, {
       lock: true,
       text: 'Loading',
       spinner: 'el-icon-loading',
-      background: 'rgb(175,247,255,0.7)'
+      background: 'rgb(0,0,0,0.2)'
     }, config));
   },
   message: {
@@ -49,34 +49,35 @@ base.http = {
     var options = _.assign({}, this.defaultConfig, config);
 
     if (options.ui.showLoading) {
-      showFullScreenLoading();
+      //showFullScreenLoading();
     }
 
-    return axiosInst.request(config).then(function (response) {
-      tryHideFullScreenLoading();
-      var result = response.data || {};
-
-      if (!result.successed) {
-        if (options.ui.showError) {
-          base.message.error(result.msg);
-        }
-
-        return Promise.reject(result.msg);
-      }
-
-      return result;
-    }).catch(function (e) {
-      tryHideFullScreenLoading();
-
-      if (e && e.message) {
-        e = e.message;
-
-        if (options.ui.showError) {
-          base.message.error(e);
-        }
-      }
-      return Promise.reject(e);
-    });
+    return axiosInst.request(config)
+    //   .then(function (response) {
+    //   //tryHideFullScreenLoading();
+    //   var result = response.data || {};
+    //
+    //   if (!result.successed) {
+    //     if (options.ui.showError) {
+    //       base.message.error(result.msg);
+    //     }
+    //
+    //     return Promise.reject(result.msg);
+    //   }
+    //
+    //   return result;
+    // }).catch(function (e) {
+    //   //tryHideFullScreenLoading();
+    //
+    //   if (e && e.message) {
+    //     e = e.message;
+    //
+    //     if (options.ui.showError) {
+    //       base.message.error(e);
+    //     }
+    //   }
+    //   return Promise.reject(e);
+    // });
   },
   get: function get(url, params, config) {
     return this.request(_.assign({}, config, {

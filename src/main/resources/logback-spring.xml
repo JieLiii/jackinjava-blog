@@ -88,7 +88,7 @@
     <!-- dubbo -->
     <!--<logger name="com.alibaba.dubbo.monitor" level="ERROR"/>-->
     <!--<logger name="com.alibaba.dubbo.remoting" level="ERROR" />-->
-
+    <logger name="com.jackinjava.blog.mapper" level="DEBUG" />
     <!-- 日志输出级别 -->
     <!-- <root level="${LOG_ROOT_LEVEL}">-->
     <!--    <appender-ref ref="STDOUT" />-->

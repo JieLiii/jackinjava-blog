@@ -1,5 +1,8 @@
 package com.jackinjava.blog.commons.model;
 
+import com.jackinjava.blog.commons.utils.BaseUtils;
+import org.apache.commons.lang3.StringUtils;
+
 import java.io.Serializable;
 import java.sql.Timestamp;
 
@@ -10,6 +13,13 @@ public abstract class BaseEntity implements Serializable {
     private String id;
 
     private Timestamp createdTime;
+
+    public BaseEntity() {
+        if(StringUtils.isBlank(id)){
+            id = BaseUtils.getUUID();
+        }
+        createdTime = new Timestamp(System.currentTimeMillis());
+    }
 
     public String getId() {
         return id;

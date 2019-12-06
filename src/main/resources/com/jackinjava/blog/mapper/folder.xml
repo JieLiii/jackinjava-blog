@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jackinjava.blog.mapper.FolderMapper">
+    <resultMap id="resultFolderMap" type="Folder">
+        <result property="id" column="id"></result>
+        <result property="userId" column="user_id"></result>
+        <result property="name" column="name"></result>
+        <result property="parentId" column="parent_id"></result>
+        <result property="parentName" column="parent_name"></result>
+        <result property="leaf" column="leaf"></result>
+        <result property="createdTime" column="created_time"></result>
+        <collection property="articleList" ofType="Article" column="folder_id">
+            <result property="id" column="id" javaType="string" jdbcType="VARCHAR"></result>
+            <result property="title" column="title" javaType="string" jdbcType="VARCHAR"></result>
+            <result property="content" column="content" javaType="string" jdbcType="VARCHAR"></result>
+            <result property="contentHtml" column="content_html" javaType="string" jdbcType="VARCHAR"></result>
+            <result property="userName" column="user_name" javaType="string" jdbcType="VARCHAR"></result>
+            <result property="userCode" column="user_code" javaType="string" jdbcType="VARCHAR"></result>
+        </collection>
+    </resultMap>
+
+    <insert id="insert" parameterType="Folder">
+        insert into base.folder(id,user_id,name,parent_id,parent_name,leaf,created_time) values (
+        #{id},#{userId},#{name},#{parentId},#{parentName},#{leaf},#{createdTime}
+        )
+    </insert>
+</mapper>

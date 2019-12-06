@@ -42,3 +42,23 @@
 .editor {
     background-color: #f8f8f8;
 }
+
+.new-button {
+    width: 150px;
+    height: 31px;
+    border: 2px red;
+    border-radius: 10px;
+    padding-top: 4px;
+    font-size: 18px;
+    text-align: center;
+    background-color: brown;
+    color: white;
+}
+
+.new-button:hover {
+    background-color: red;
+}
+
+i.el-icon-plus {
+    margin-right: 5px;
+}

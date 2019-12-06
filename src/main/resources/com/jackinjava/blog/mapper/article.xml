@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jackinjava.blog.mapper.ArticleMapper">
+    <insert id="insert" parameterType="Article">
+        insert into base.article(id,title,content,content_html,user_name,user_code,created_time,folder_id) values (
+        #{id},#{title},#{content},#{contentHtml},#{userName},#{userCode},#{createdTime},#{folderId}
+        )
+    </insert>
+</mapper>
